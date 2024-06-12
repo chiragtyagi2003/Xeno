@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Customer Details</h1>
+<p>Customer ID: {{ customer.id }}</p>
+<p>Name: {{ customer.name }}</p>
+<p>Email: {{ customer.email }}</p>
+<h2>Orders</h2>
+<ul>
+    {% for order in customer.orders %}
+    <li>Order ID: {{ order.id }} - Total Amount: ${{ order.total_amount }} - Date: {{ order.date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

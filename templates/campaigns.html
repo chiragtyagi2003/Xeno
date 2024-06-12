@@ -1,0 +1,35 @@
+<!-- templates/campaigns.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Campaigns</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Past Campaigns</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Audience Size</th>
+                <th>Sent</th>
+                <th>Failed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campaign in campaigns %}
+            <tr>
+                <td>{{ campaign.name }}</td>
+                <td>{{ campaign.audience_size }}</td>
+                <td>{{ campaign.sent }}</td>
+                <td>{{ campaign.failed }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
